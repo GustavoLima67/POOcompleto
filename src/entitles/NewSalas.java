@@ -8,6 +8,7 @@ public class NewSalas extends Salas {
     public NewSalas(){
     }
     public NewSalas(String wifi,String TV){
+        super();
         this.wifi = wifi;
         this.TV = TV;
     }

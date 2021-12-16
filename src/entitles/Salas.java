@@ -1,33 +1,21 @@
 package entitles;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Salas {
-    
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-    private Date year;
+   
     private String school;
-    private NewSalas newSalas;
+    private Student student;
     
     private List<NewSalas> salas = new ArrayList<>();
     
     public Salas(){
     }
-    public Salas(String school,List<NewSalas> salas,Date year,NewSalas newSalas){
+    public Salas(String school,List<NewSalas> salas, Student student){
         this.school = school;
         this.salas = salas;
-        this.year = year;
-        this.newSalas = newSalas;
-    }
-    public Date getYear(){
-        return year;
-    }
-    public void setYear(Date year){
-        this.year = year;
+        this.student = student;
     }
     public String getSchool(){
         return school;
@@ -38,21 +26,23 @@ public class Salas {
     public void add(NewSalas sala){
         salas.add(sala);
     }
-    public NewSalas getNewSalas(){
-        return newSalas;
+    public Student getStudent(){
+        return student;
     }
-    public void setNewSalas(NewSalas newSalas){
-        this.newSalas = newSalas;
+    public void setStudent(Student student){
+        this.student = student;
     }
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Year: ");
-        sb.append(sdf.format(year)).append("\n");
-        sb.append("School: ");
-        sb.append(school).append("\n");
-        sb.append("New equipments: ");
-        sb.append(newSalas);
-        return sb.toString();
+		sb.append("School: ");
+		sb.append(school).append("\n");
+		sb.append("Sala: ");
+		sb.append(salas).append("\n");
+		sb.append("New equipments:\n");
+		for(NewSalas sl : salas) {
+			sb.append(sl).append("\n");
+		}
+		return sb.toString();
     }
 }
