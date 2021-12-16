@@ -1,21 +1,23 @@
 package entitles;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class Salas {
    
     private String school;
-    private Student student;
-    
-    private List<NewSalas> salas = new ArrayList<>();
+    private String clas;
+    private Date year;
     
     public Salas(){
     }
-    public Salas(String school,List<NewSalas> salas, Student student){
+    public Salas(String school,String clas,Date year){
         this.school = school;
-        this.salas = salas;
-        this.student = student;
+        this.clas = clas;
+        this.year = year;
+    }
+    public Salas(String school,String clas){
+        this.school = school;
+        this.clas = clas;
     }
     public String getSchool(){
         return school;
@@ -23,26 +25,27 @@ public class Salas {
     public void setSchool(String school){
         this.school = school;
     }
-    public void add(NewSalas sala){
-        salas.add(sala);
+    public String getClas(){
+        return clas;
     }
-    public Student getStudent(){
-        return student;
+    public void setClas(String clas){
+        this.clas = clas;
     }
-    public void setStudent(Student student){
-        this.student = student;
+    public Date getYear(){
+        return year;
+    }
+    public void setYear(Date year){
+        this.year = year;
     }
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
 		sb.append("School: ");
 		sb.append(school).append("\n");
-		sb.append("Sala: ");
-		sb.append(salas).append("\n");
-		sb.append("New equipments:\n");
-		for(NewSalas sl : salas) {
-			sb.append(sl).append("\n");
-		}
+		sb.append("Clas: ");
+		sb.append(clas).append("\n");
+                sb.append("Current year: ");
+                sb.append(year).append("\n");
 		return sb.toString();
     }
 }

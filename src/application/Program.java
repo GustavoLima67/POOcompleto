@@ -40,11 +40,13 @@ public class Program {
                 sc.nextLine();
                 String school = sc.nextLine();
                 System.out.print("what is your class: ");
-                String salas = sc.nextLine();
+                String clas = sc.nextLine();
                 System.out.print("Enter with date the day: ");
                 Date year = sdf.parse(sc.next()); 
             
                 System.out.println();
+                
+                Salas sl1 = new Salas(school,clas,year);
             }
         }else{
             for(int i =1;i<=schoolType;i++){
@@ -52,10 +54,15 @@ public class Program {
                 System.out.print("Enter the school name: ");
                 String school = sc.nextLine();
                 System.out.print("what is your class: ");
-                String salas = sc.nextLine();
+                String clas = sc.nextLine();
+                
+                Salas sl2 = new Salas(school,clas);
             }
         }
         System.out.println();
+        
+        Salas sl1;
+        Salas sl2; 
             
         System.out.println("Enter with new equipment school: ");
         System.out.print("Equipment 1: ");
@@ -63,11 +70,10 @@ public class Program {
         String equipment1 = sc.nextLine();
         System.out.print("Equipment 2: ");
         String equipment2 = sc.nextLine();
-        
+       
         NewSalas ns = new NewSalas(equipment1,equipment2);
-       
-        Salas sl = new Salas(); 
-       
-        System.out.println(sl);
+        
+        System.out.println("School summary:");
+        System.out.println(sl1);
     }
 }

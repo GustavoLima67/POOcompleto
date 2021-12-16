@@ -37,7 +37,7 @@ public class Student {
         this.bithDate = bithDate;
     }
     public String toString(){
-        return "Student: "+name+", Age: "+age+", BirthDate:"+sdf.format(bithDate);
+        return "Student: "+name+", Age: "+age+", BirthDate: "+sdf.format(bithDate);
     }
      
 }

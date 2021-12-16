@@ -2,29 +2,35 @@ package entitles;
 
 public class NewSalas extends Salas {
    
-    private String wifi;
-    private String TV;
+    private String equipment1;
+    private String equipment2;
             
     public NewSalas(){
-    }
-    public NewSalas(String wifi,String TV){
         super();
-        this.wifi = wifi;
-        this.TV = TV;
     }
-    public String getWifi(){
-        return wifi;
+    public NewSalas(String school,String clas,String equipment1,String equipment2){
+        super(school,clas);
+        this.equipment1 = equipment1;
+        this.equipment2 = equipment2;
     }
-    public void setWifi(String wifi){
-        this.wifi = wifi;
+    public NewSalas(String equipment1, String equipment2){
+        this.equipment1 = equipment1;
+        this.equipment2 = equipment2;
     }
-    public String getTV(){
-        return TV;
+    public String getEquipment1(){
+        return equipment1;
     }
-    public void setTV(String TV){
-        this.TV = TV;
+    public void setEquipment1(String equipment1){
+        this.equipment1 = equipment1;
     }
+    public String getEquipment2(){
+        return equipment2;
+    }
+    public void setEquipment2(String equipment2){
+        this.equipment2 = equipment2;
+    }
+    @Override
     public String toString(){
-        return "New Equipments: \n"+"Equipment 1: "+wifi+", Equipment 2:"+TV;
+        return "New Equipments: \n"+"Equipment 1: "+equipment1+", Equipment 2: "+equipment2;
     }
 }
