@@ -12,7 +12,7 @@ public class Program {
     public static void main(String[] args) throws ParseException{
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-       
+
         System.out.print("Enter with quantity the student: ");
         Integer student = sc.nextInt();
         
@@ -29,6 +29,10 @@ public class Program {
             System.out.println();
             
             Student sd = new Student(name, age, birthDate);
+            
+            System.out.println(sd);
+            System.out.println();
+            
         }
         System.out.print("how many school do you want to type: ");
         Integer schoolType = sc.nextInt();
@@ -41,39 +45,51 @@ public class Program {
                 String school = sc.nextLine();
                 System.out.print("what is your class: ");
                 String clas = sc.nextLine();
-                System.out.print("Enter with date the day: ");
-                Date year = sdf.parse(sc.next()); 
-            
+                
+                Salas sl = new Salas(school,clas); 
+                
                 System.out.println();
                 
-                Salas sl1 = new Salas(school,clas,year);
+                System.out.println(sl);
+                
+                System.out.println();
+            
             }
         }else{
             for(int i =1;i<=schoolType;i++){
                 System.out.println("School #"+i+":");
                 System.out.print("Enter the school name: ");
+                sc.nextLine();
                 String school = sc.nextLine();
                 System.out.print("what is your class: ");
                 String clas = sc.nextLine();
                 
-                Salas sl2 = new Salas(school,clas);
+                Salas sl = new Salas(school, clas);
+                
+                System.out.println(sl);
+                System.out.println();
+                 
             }
         }
-        System.out.println();
-        
-        Salas sl1;
-        Salas sl2; 
+        System.out.print("You have 3 new equipment i would like to add: (s/n) ");
+        String newEquipment = sc.nextLine();
+        if(newEquipment.charAt(0) == 's'){
             
-        System.out.println("Enter with new equipment school: ");
-        System.out.print("Equipment 1: ");
-        sc.nextLine();
-        String equipment1 = sc.nextLine();
-        System.out.print("Equipment 2: ");
-        String equipment2 = sc.nextLine();
-       
-        NewSalas ns = new NewSalas(equipment1,equipment2);
-        
-        System.out.println("School summary:");
-        System.out.println(sl1);
+            System.out.println("Enter with new equipment the school: ");
+            System.out.print("Equipment #1: ");
+            String equipment1 = sc.nextLine();
+                
+            System.out.print("Equipment #2: ");
+            String equipment2 = sc.nextLine();
+                
+            System.out.print("Equipment #3: ");
+            String equipment3 = sc.nextLine();
+                
+            NewSalas ns = new NewSalas(equipment1, equipment2, equipment3);
+            System.out.println();
+            System.out.println(ns);
+            System.out.println();
+            
+        }
     }
 }
